@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common\framesend\ClientFramesend.h" />
+    <ClInclude Include="common\framesend\FramesendBase.h" />
+    <ClInclude Include="common\framesend\FrameSendBaseConfig.h" />
+    <ClInclude Include="common\framesend\ServerFramesend.h" />
+    <ClInclude Include="common\message\error_code.h" />
+    <ClInclude Include="common\message\message_id.h" />
+    <ClInclude Include="common\serverbase\ServerBase.h" />
+    <ClInclude Include="common\serverbase\ServerBaseConfig.h" />
+    <ClInclude Include="common\shared\datatype_define.h" />
+    <ClInclude Include="common\shared\FrequencyControl.h" />
+    <ClInclude Include="common\shared\gametime.h" />
+    <ClInclude Include="common\shared\GlobalTime.h" />
+    <ClInclude Include="communicate\CommConfig.h" />
+    <ClInclude Include="communicate\CommInterface.h" />
+    <ClInclude Include="communicate\CommModule.h" />
+    <ClInclude Include="communicate\comm_data_struct.h" />
+    <ClInclude Include="communicate\Connection.h" />
+    <ClInclude Include="enginebase\EngineBase.h" />
+    <ClInclude Include="enginebase\EngineBaseConfig.h" />
+    <ClInclude Include="enginebase\TimerHandler.h" />
+    <ClInclude Include="eventframe\EventFrame.h" />
+    <ClInclude Include="global\base_inc.h" />
+    <ClInclude Include="global\define_inc.h" />
+    <ClInclude Include="tools\ClientPacket.h" />
+    <ClInclude Include="tools\MessageStream.h" />
+    <ClInclude Include="tools\Noncopyable.h" />
+    <ClInclude Include="tools\PacketBase.h" />
+    <ClInclude Include="tools\PacketHandler.h" />
+    <ClInclude Include="tools\PacketHead.h" />
+    <ClInclude Include="tools\ServerPacket.h" />
+    <ClInclude Include="tools\StreamBase.h" />
+    <ClInclude Include="tools\StreamReader.h" />
+    <ClInclude Include="tools\StreamWriter.h" />
+    <ClInclude Include="util\func_template.h" />
+    <ClInclude Include="util\rw_queue.h" />
+    <ClInclude Include="util\SimpleTimer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="common\framesend\FramesendBase.cpp" />
+    <ClCompile Include="common\shared\GlobalTime.cpp" />
+    <ClCompile Include="communicate\CommModule.cpp" />
+    <ClCompile Include="communicate\Connection.cpp" />
+    <ClCompile Include="eventframe\EventFrame.cpp" />
+    <ClCompile Include="tools\ClientPacket.cpp" />
+    <ClCompile Include="tools\MessageStream.cpp" />
+    <ClCompile Include="tools\PacketBase.cpp" />
+    <ClCompile Include="tools\ServerPacket.cpp" />
+    <ClCompile Include="tools\StreamReader.cpp" />
+    <ClCompile Include="tools\StreamWriter.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F7D5F59F-F12E-4439-8A85-C93EF4EFFC43}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Net</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>../../../../Boost/include/boost-1_49;../Net;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ReferencePath>../../../../Boost/lib;$(ReferencePath)</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>../../../../Boost/include/boost-1_49;../Net;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>../../../../Boost/lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_WIN32_WINNT=0x0501;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

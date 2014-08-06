@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="common">
+      <UniqueIdentifier>{e65ad193-b273-4cef-abaa-3bfafa6a64c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="communicate">
+      <UniqueIdentifier>{5d4913b6-67ac-4880-8af9-aee481d3d351}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enginebase">
+      <UniqueIdentifier>{1b329f57-e11c-4733-97a6-895a2f74f130}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="eventframe">
+      <UniqueIdentifier>{38942434-d6b2-479a-a3c2-3ae81d0b1a85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="global">
+      <UniqueIdentifier>{50e826d4-f63a-4511-aed8-1d4495ced666}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools">
+      <UniqueIdentifier>{f3ce7968-a670-400a-940a-d6e67fe4be79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{15f20c78-8532-44b3-913b-ef1633bc3b61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\framesend">
+      <UniqueIdentifier>{cf8b617b-90ad-4069-85d5-03ed95b0a56c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\message">
+      <UniqueIdentifier>{4c4fc573-ab2d-4ce4-a7ec-0ec2200d16e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\serverbase">
+      <UniqueIdentifier>{7f6cf1ef-dd09-4267-8eee-b0cd64cf099d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\shared">
+      <UniqueIdentifier>{41a3a39a-c45f-4458-94c5-c4034351a848}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="communicate\comm_data_struct.h">
+      <Filter>communicate</Filter>
+    </ClInclude>
+    <ClInclude Include="communicate\CommConfig.h">
+      <Filter>communicate</Filter>
+    </ClInclude>
+    <ClInclude Include="communicate\CommInterface.h">
+      <Filter>communicate</Filter>
+    </ClInclude>
+    <ClInclude Include="communicate\CommModule.h">
+      <Filter>communicate</Filter>
+    </ClInclude>
+    <ClInclude Include="communicate\Connection.h">
+      <Filter>communicate</Filter>
+    </ClInclude>
+    <ClInclude Include="enginebase\EngineBase.h">
+      <Filter>enginebase</Filter>
+    </ClInclude>
+    <ClInclude Include="enginebase\EngineBaseConfig.h">
+      <Filter>enginebase</Filter>
+    </ClInclude>
+    <ClInclude Include="enginebase\TimerHandler.h">
+      <Filter>enginebase</Filter>
+    </ClInclude>
+    <ClInclude Include="eventframe\EventFrame.h">
+      <Filter>eventframe</Filter>
+    </ClInclude>
+    <ClInclude Include="global\base_inc.h">
+      <Filter>global</Filter>
+    </ClInclude>
+    <ClInclude Include="global\define_inc.h">
+      <Filter>global</Filter>
+    </ClInclude>
+    <ClInclude Include="util\func_template.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\rw_queue.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\SimpleTimer.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\ClientPacket.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\MessageStream.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\Noncopyable.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\PacketBase.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\PacketHandler.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\PacketHead.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\ServerPacket.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\StreamBase.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\StreamReader.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\StreamWriter.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="common\framesend\ClientFramesend.h">
+      <Filter>common\framesend</Filter>
+    </ClInclude>
+    <ClInclude Include="common\framesend\FramesendBase.h">
+      <Filter>common\framesend</Filter>
+    </ClInclude>
+    <ClInclude Include="common\framesend\FrameSendBaseConfig.h">
+      <Filter>common\framesend</Filter>
+    </ClInclude>
+    <ClInclude Include="common\framesend\ServerFramesend.h">
+      <Filter>common\framesend</Filter>
+    </ClInclude>
+    <ClInclude Include="common\message\error_code.h">
+      <Filter>common\message</Filter>
+    </ClInclude>
+    <ClInclude Include="common\message\message_id.h">
+      <Filter>common\message</Filter>
+    </ClInclude>
+    <ClInclude Include="common\shared\datatype_define.h">
+      <Filter>common\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="common\shared\FrequencyControl.h">
+      <Filter>common\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="common\shared\gametime.h">
+      <Filter>common\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="common\shared\GlobalTime.h">
+      <Filter>common\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="common\serverbase\ServerBase.h">
+      <Filter>common\serverbase</Filter>
+    </ClInclude>
+    <ClInclude Include="common\serverbase\ServerBaseConfig.h">
+      <Filter>common\serverbase</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="communicate\CommModule.cpp">
+      <Filter>communicate</Filter>
+    </ClCompile>
+    <ClCompile Include="communicate\Connection.cpp">
+      <Filter>communicate</Filter>
+    </ClCompile>
+    <ClCompile Include="eventframe\EventFrame.cpp">
+      <Filter>eventframe</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\ClientPacket.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\MessageStream.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\PacketBase.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\ServerPacket.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\StreamReader.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\StreamWriter.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="common\framesend\FramesendBase.cpp">
+      <Filter>common\framesend</Filter>
+    </ClCompile>
+    <ClCompile Include="common\shared\GlobalTime.cpp">
+      <Filter>common\shared</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
