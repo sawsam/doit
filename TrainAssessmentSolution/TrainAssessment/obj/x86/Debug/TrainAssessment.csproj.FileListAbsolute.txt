@@ -19,3 +19,5 @@ D:\GitHub\MyProject\TrainAssessmentSolution\TrainAssessment\obj\x86\Debug\TrainA
 D:\GitHub\MyProject\TrainAssessmentSolution\TrainAssessment\obj\x86\Debug\TrainAssessment.FormPXGL.resources
 D:\GitHub\MyProject\TrainAssessmentSolution\TrainAssessment\obj\x86\Debug\TrainAssessment.Properties.Resources.resources
 D:\GitHub\MyProject\TrainAssessmentSolution\TrainAssessment\obj\x86\Debug\TrainAssessment.csproj.GenerateResource.Cache
+D:\GitHub\MyProject\TrainAssessmentSolution\TrainAssessment\obj\x86\Debug\TrainAssessment.FormYSXXWHModify.resources
+D:\GitHub\MyProject\TrainAssessmentSolution\TrainAssessment\obj\x86\Debug\TrainAssessment.FormYSXXWHAdd.resources

@@ -116,7 +116,7 @@ namespace TrainAssessment
         private void XXDJ_Init()
         {
             this.treeViewXXDJ.Nodes.Clear();
-            TreeNode root = new TreeNode("信息等级");
+            TreeNode root = new TreeNode("信息登记");
             this.treeViewXXDJ.Nodes.Add(root);
             TreeNode child1 = new TreeNode("我的信息");
             TreeNode child2 = new TreeNode("医师信息维护");
@@ -139,10 +139,17 @@ namespace TrainAssessment
         {
             if (this.treeViewXXDJ.SelectedNode.Text == "我的信息")
             {
+                this.llPXXXName.Text = GlobalData.name;
+                this.llPXXXNum.Text = GlobalData.number.ToString();
+                this.llPXXXKS.Text = GlobalData.department;
+                this.llPXXXXK.Text = "";
+                this.llPXXXJD.Text = "";
+                this.llPXXXYear.Text = "";
                 this.splitContainerMain.Panel2.Controls.Clear();
                 this.splitContainerMain.Panel2.Controls.Add(this.tlpWDPXXX);
                 this.tlpWDPXXX.Dock = System.Windows.Forms.DockStyle.Fill;
                 this.tlpWDPXXX.Visible = true;
+                Net.CreateSendPacket(GlobalData.connectFd, GlobalData.connectSn, GlobalData.MCC_REQUEST_TRAIN_INFO, GlobalData.E_NO_ERR);
             }
             else if (this.treeViewXXDJ.SelectedNode.Text == "医师信息维护")
             {
@@ -150,6 +157,7 @@ namespace TrainAssessment
                 this.splitContainerMain.Panel2.Controls.Add(this.tlpYSXXWH);
                 this.tlpYSXXWH.Dock = System.Windows.Forms.DockStyle.Fill;
                 this.tlpYSXXWH.Visible = true;
+                Net.CreateSendPacket(GlobalData.connectFd, GlobalData.connectSn, GlobalData.MCC_REQUEST_TRAIN_LIST, GlobalData.E_NO_ERR);
             }
         }
 
@@ -547,6 +555,18 @@ namespace TrainAssessment
                 this.tbPath.Clear();
                 this.ofdUpload.FileName = "";
             }
+        }
+
+        private void btnYSXXWHModify_Click(object sender, EventArgs e)
+        {
+            GlobalData.frmYSXXWHModify = new FormYSXXWHModify();
+            GlobalData.frmYSXXWHModify.ShowDialog();
+        }
+
+        private void btnYSXXWHAdd_Click(object sender, EventArgs e)
+        {
+            GlobalData.frmYSXXWHAdd = new FormYSXXWHAdd();
+            GlobalData.frmYSXXWHAdd.ShowDialog();
         }
     }
 }

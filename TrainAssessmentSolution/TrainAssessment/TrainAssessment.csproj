@@ -66,6 +66,18 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormYSXXWHAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormYSXXWHAdd.Designer.cs">
+      <DependentUpon>FormYSXXWHAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormYSXXWHModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormYSXXWHModify.Designer.cs">
+      <DependentUpon>FormYSXXWHModify.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalData.cs" />
     <Compile Include="Net.cs" />
     <Compile Include="Notice.cs" />
@@ -80,6 +92,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormYSXXWHAdd.resx">
+      <DependentUpon>FormYSXXWHAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormYSXXWHModify.resx">
+      <DependentUpon>FormYSXXWHModify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

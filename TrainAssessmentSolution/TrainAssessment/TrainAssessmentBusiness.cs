@@ -39,6 +39,9 @@ namespace TrainAssessment
         {
             if (err == GlobalData.E_NO_ERR)
             {
+                GlobalData.number = Net.ReadInt();
+                GlobalData.name = Net.ReadString();
+                GlobalData.department = Net.ReadString();
                 GlobalData.frmLogin.DialogResult = DialogResult.OK;
             }
             else
@@ -185,60 +188,12 @@ namespace TrainAssessment
 
         public void active_add_notice()
         {
-            //if (GlobalData.noticePage <= 1)
-            {
-                GlobalData.frmPXGL.WDXX_Request_Notice(GlobalData.noticePage);
-                //{
-                //    Notice notice = new Notice();
-                //    notice.id = Net.ReadInt();
-                //    notice.title = Net.ReadString();
-                //    notice.publisher = Net.ReadString();
-                //    notice.time = Net.ReadInt().ToString();
-                //    notice.content = Net.ReadString();
-                //    GlobalData.noticeList.Insert(0, notice);
-                //    if (GlobalData.noticeList.Count > 10)
-                //    {
-                //        GlobalData.noticeList.RemoveAt(GlobalData.noticeList.Count - 1);
-                //    }
-                //}
-
-                //GlobalData.frmPXGL.listViewTZGG.Items.Clear();
-                //foreach (Notice notice in GlobalData.noticeList)
-                //{
-                //    ListViewItem item = new ListViewItem(new string[] { notice.title, notice.publisher, notice.time });
-                //    GlobalData.frmPXGL.listViewTZGG.Items.Add(item);
-                //}
-                //GlobalData.frmPXGL.noticePageUpdate();
-            }
+            GlobalData.frmPXGL.WDXX_Request_Notice(GlobalData.noticePage);
         }
 
         public void active_add_policy()
         {
-            //if (GlobalData.policyPage <= 1)
-            {
-                GlobalData.frmPXGL.WDXX_Request_Policy(GlobalData.policyPage);
-                //{
-                //    Notice notice = new Notice();
-                //    notice.id = Net.ReadInt();
-                //    notice.title = Net.ReadString();
-                //    notice.publisher = Net.ReadString();
-                //    notice.time = Net.ReadInt().ToString();
-                //    notice.content = Net.ReadString();
-                //    GlobalData.policyList.Insert(0, notice);
-                //    if (GlobalData.policyList.Count > 10)
-                //    {
-                //        GlobalData.policyList.RemoveAt(GlobalData.noticeList.Count - 1);
-                //    }
-                //}
-
-                //GlobalData.frmPXGL.listViewZCFG.Items.Clear();
-                //foreach (Notice notice in GlobalData.policyList)
-                //{
-                //    ListViewItem item = new ListViewItem(new string[] { notice.title, notice.publisher, notice.time });
-                //    GlobalData.frmPXGL.listViewZCFG.Items.Add(item);
-                //}
-                //GlobalData.frmPXGL.policyPageUpdate();
-            }
+            GlobalData.frmPXGL.WDXX_Request_Policy(GlobalData.policyPage);
         }
 
         public void del_notice_return(int err)
@@ -259,6 +214,79 @@ namespace TrainAssessment
         public void active_del_policy()
         {
             GlobalData.frmPXGL.WDXX_Request_Policy(GlobalData.policyPage);
+        }
+
+        public void train_info_return()
+        {
+            GlobalData.frmPXGL.llPXXXNum.Text = Net.ReadInt().ToString();
+            GlobalData.frmPXGL.llPXXXName.Text = Net.ReadString();
+            GlobalData.frmPXGL.llPXXXKS.Text = Net.ReadString();
+            GlobalData.frmPXGL.llPXXXXK.Text = Net.ReadString();
+            GlobalData.frmPXGL.llPXXXJD.Text = Net.ReadString();
+            GlobalData.frmPXGL.llPXXXYear.Text = Net.ReadInt().ToString();
+            GlobalData.frmPXGL.listViewPXAP.Items.Clear();
+            int count = Net.ReadInt();
+            for (int i = 0; i < count; ++i)
+            {
+                ListViewItem item = new ListViewItem(new string[] { (i+1).ToString(), Net.ReadString(), Net.ReadInt().ToString(), Net.ReadInt().ToString(), Net.ReadInt().ToString() });
+                GlobalData.frmPXGL.listViewPXAP.Items.Add(item);
+            }
+        }
+
+        public void train_list_return()
+        {
+            GlobalData.frmPXGL.listViewYSXXWH.Items.Clear();
+            int count = Net.ReadInt();
+            for (int i = 0; i < count; ++i)
+            {
+                ListViewItem item = new ListViewItem(new string[] { Net.ReadString(), Net.ReadInt().ToString(), Net.ReadString(), Net.ReadString(), Net.ReadInt().ToString() });
+                GlobalData.frmPXGL.listViewYSXXWH.Items.Add(item);
+            }
+        }
+
+        public void modify_train_return()
+        {
+            Net.CreateSendPacket(GlobalData.connectFd, GlobalData.connectSn, GlobalData.MCC_REQUEST_TRAIN_LIST, GlobalData.E_NO_ERR);
+            Net.WriteString(new StringBuilder(""));
+            Net.WriteString(new StringBuilder(""));
+            Net.WriteInt(0);
+            Net.SendPacket();
+        }
+
+        public void add_train_return()
+        {
+            Net.CreateSendPacket(GlobalData.connectFd, GlobalData.connectSn, GlobalData.MCC_REQUEST_TRAIN_LIST, GlobalData.E_NO_ERR);
+            Net.WriteString(new StringBuilder(""));
+            Net.WriteString(new StringBuilder(""));
+            Net.WriteInt(0);
+            Net.SendPacket();
+        }
+
+        public void del_train_return()
+        {
+            Net.CreateSendPacket(GlobalData.connectFd, GlobalData.connectSn, GlobalData.MCC_REQUEST_TRAIN_LIST, GlobalData.E_NO_ERR);
+            Net.WriteString(new StringBuilder(""));
+            Net.WriteString(new StringBuilder(""));
+            Net.WriteInt(0);
+            Net.SendPacket();
+        }
+
+        public void user_return()
+        {
+            GlobalData.frmYSXXWHAdd.listViewMain.Items.Clear();
+            {
+                ListViewItem item = new ListViewItem(new string[] { "", "", "", "", "" });
+                GlobalData.frmYSXXWHAdd.listViewMain.Items.Add(item);
+            }
+            int count = Net.ReadInt();
+            for (int i = 0; i < count; ++i)
+            {
+                string department = Net.ReadString();
+                int number = Net.ReadInt();
+                string name = Net.ReadString();
+                ListViewItem item = new ListViewItem(new string[] { department, number.ToString(), name, "", "" });
+                GlobalData.frmYSXXWHAdd.listViewMain.Items.Add(item);
+            }
         }
     }
 }

@@ -86,6 +86,24 @@ namespace TrainAssessment
                 case GlobalData.MCS_ACTIVE_DEL_POLICY:
                     GlobalData.business.active_del_policy();
                     break;
+                case GlobalData.MCS_REQUEST_TRAIN_INFO:
+                    GlobalData.business.train_info_return();
+                    break;
+                case GlobalData.MCS_REQUEST_TRAIN_LIST:
+                    GlobalData.business.train_list_return();
+                    break;
+                case GlobalData.MCS_MODIFY_TRAIN:
+                    GlobalData.business.modify_train_return();
+                    break;
+                case GlobalData.MCS_ADD_TRAIN:
+                    GlobalData.business.add_train_return();
+                    break;
+                case GlobalData.MCS_DEL_TRAIN:
+                    GlobalData.business.del_train_return();
+                    break;
+                case GlobalData.MCS_REQUEST_USER:
+                    GlobalData.business.user_return();
+                    break;
                 default:
                     break;
             }

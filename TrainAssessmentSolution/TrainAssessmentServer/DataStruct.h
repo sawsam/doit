@@ -61,4 +61,43 @@ struct Notice
 };
 typedef boost::shared_ptr<Notice> NoticePtr;
 
+struct TrainUnit
+{
+	TrainUnit()
+		:_department(""),_duration(0),_start(0),_end(0)
+	{
+
+	}
+
+	void serialize(StreamWriter &w)
+	{
+		w.write_string(_department);
+		w.write_int32(_duration);
+		w.write_int32((int)_start);
+		w.write_int32((int)_end);
+	}
+
+	string _department;
+	int _duration;
+	time_t _start;
+	time_t _end;
+};
+typedef boost::shared_ptr<TrainUnit> TrainUnitPtr;
+
+struct TrainInfo
+{
+	TrainInfo()
+		:_number(0),_discipline(""),_stage(""),_period(0)
+	{
+
+	}
+	
+	int _number;
+	string _discipline;
+	string _stage;
+	int _period;
+	vector<TrainUnitPtr> _trains;
+};
+typedef boost::shared_ptr<TrainInfo> TrainInfoPtr;
+
 #endif

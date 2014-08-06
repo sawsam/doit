@@ -78,7 +78,7 @@
   <ItemGroup>
     <ClInclude Include="DataStruct.h" />
     <ClInclude Include="MyMessage.h" />
-    <ClInclude Include="PlayerInfo.h" />
+    <ClInclude Include="UserInfo.h" />
     <ClInclude Include="Server.h" />
   </ItemGroup>
   <ItemGroup>
